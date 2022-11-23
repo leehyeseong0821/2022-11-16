@@ -222,10 +222,36 @@ header{
 
     overflow: hidden;
 }
+.button-icon:hover{
+    background-color: #f0f0f0;
+}
 .button-icon i{
     color: #555555;
 }
 .button-title{
     font-size: 10px;
     color: #a0a0a0;
+}
+.toggle-button{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+    line-height: 0px;
+    width: 18px;
+    height: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -18px;
+
+    border: none;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    font-size: 10px;
+    background-color: white;
+    color: #258fff;
+    cursor: pointer;
+    box-shadow: 2px 0px 2px rgba(0, 0, 0, 0.119);
 }
