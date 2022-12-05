@@ -30,14 +30,21 @@ public class LoginApi extends HttpServlet {
 		if(user ==null) {
 			System.out.println("아이디 틀림!");
 			//error_login.html -> script : 사용자 정보를 확인해 주세요. history.back();
+			request.getRequestDispatcher("/WEB-INF/account/error_login.html").forward(request, response);
 			return;
 		}
 		if(!accountSerivce.checkPassword(user, loginUser.get("password"))) {
 			System.out.println("비밀번호 틀림!");
 			//error_login.html -> script : 사용자 정보를 확인해 주세요. history.back();
+			request.getRequestDispatcher("/WEB-INF/account/error_login.html").forward(request, response);
 			return;
 		}
+		//로그인 성공!
+		HttpSession session = request.getSession();
+		session.setAttribute("principal", user);
 		
+		response.sendRedirect("/mypage");
 	}
+	
 
 }

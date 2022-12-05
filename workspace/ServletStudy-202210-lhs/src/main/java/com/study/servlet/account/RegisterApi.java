@@ -35,6 +35,7 @@ public class RegisterApi extends HttpServlet {
 				.password(registerParmas.get("password"))
 				.name(registerParmas.get("name"))
 				.email(registerParmas.get("email"))
+				.roles("ROLE_USER,ROLE_ADMIN")
 				.build();
 		
 		 accountService.register(user);
